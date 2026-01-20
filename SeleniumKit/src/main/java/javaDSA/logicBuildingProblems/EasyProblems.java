@@ -38,5 +38,23 @@ public class EasyProblems {
 
     }
 
+    public void factorialOfNumber(int number){
+        int temp = 1;
+        for (int i = 2; i <= number; i++) {
+            temp = temp * i;
+        }
+        System.out.println("factorialOfNumber for "+number+" is::"+temp);
+    }
+
+    public void isPalindrome(){
+        String str= "racecar";
+        char first= str.charAt(1);
+        for (int i = 0;i<str.length();i++){
+            for (int j=str.length()-1;j>=0;j--){
+
+            }
+        }
+
+    }
 
 }

@@ -11,9 +11,8 @@ public class Main {
 //        BP.multiplicationTable(20);
 //        System.out.println(BP.sumOfNatural2(20));
 //        easy.reverseAString("Sandeep");
-
-        easy.reverseSentence("sandeep is an QA");
-
+//        easy.reverseSentence("sandeep is an QA");
+//        easy.factorialOfNumber(3);
 
 
     }
