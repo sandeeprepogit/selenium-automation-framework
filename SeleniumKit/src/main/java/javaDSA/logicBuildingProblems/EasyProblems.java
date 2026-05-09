@@ -51,10 +51,20 @@ public class EasyProblems {
         char first= str.charAt(1);
         for (int i = 0;i<str.length();i++){
             for (int j=str.length()-1;j>=0;j--){
+                    if(str.charAt(i)==str.charAt(j)){
+                        System.out.println("true");
+                    }
+                    else {
+                        System.out.println("false");
 
+                    }
             }
         }
 
     }
+
+
+
+
 
 }
