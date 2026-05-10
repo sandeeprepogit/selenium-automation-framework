@@ -15,7 +15,7 @@ import java.util.Properties;
 public class SQLconnection {
 
     // Database connection parameters
-    private static final String URL = "jdbc:mysql://localhost:3306/automation";
+    private static final String URL = "jdbc:mysql://localhost:3306/sandeepBankAccount";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "Brownee@2026";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";

@@ -1,10 +1,12 @@
 package org.example;
 
 import DBUtils.SQLconnection;
+import javaDSA.logicBuildingProblems.BankAccount;
 import javaDSA.logicBuildingProblems.BasicProblems;
 import javaDSA.logicBuildingProblems.EasyProblems;
 
 import java.sql.SQLException;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -33,9 +35,14 @@ public class Main {
 //        System.out.print("Sum: ");
 //        result.show(); // Output: 12 + i5
 
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.fetchAccountDetails("10001");
+        System.out.println(bankAccount.getAccountNumber());
+        System.out.println(bankAccount.getBalance());
+        System.out.println(bankAccount.isActive());
 
-        SQLconnection sqLconnection = new SQLconnection();
-        sqLconnection.getConnection();
+
+
 
     }
 }

@@ -1,5 +1,7 @@
 package javaDSA.logicBuildingProblems;
 
+import java.util.Random;
+
 public class BasicProblems {
 
 //    Given a number n, check whether it is even or odd. Return true for even and false for odd.
@@ -44,6 +46,13 @@ public class BasicProblems {
         int temp = x;
         x=y;
         y=temp;
+    }
+
+    public int generateAccountNumber(){
+        Random random = new Random();
+        int randomId;
+        randomId = 10000 + random.nextInt(90000);
+        return randomId;
     }
 
 }
