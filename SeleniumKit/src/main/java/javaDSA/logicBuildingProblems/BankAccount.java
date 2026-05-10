@@ -1,12 +1,13 @@
 package javaDSA.logicBuildingProblems;
 
+import DBUtils.SQLconnection;
+
 public class BankAccount {
 
     private String accountNumber;
     private double balance ;
     private boolean isActive;
-
-
+    SQLconnection sqLconnection = new SQLconnection();
 
     public BankAccount(String accountNumber){
         this.accountNumber = accountNumber;
