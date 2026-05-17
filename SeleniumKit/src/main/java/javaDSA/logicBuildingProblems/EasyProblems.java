@@ -1,5 +1,10 @@
 package javaDSA.logicBuildingProblems;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class EasyProblems {
 
     //    Given a number n, find the sum of its digits.
@@ -63,8 +68,61 @@ public class EasyProblems {
 
     }
 
+//    Change each word's first letter to upper case:
+
+    public void firstLetterUppercase(){
+        String sen= "sandeep is working as qa";
+        String arr[] = sen.split(" ");
+        String finalSentance = "";
+
+        for(int i =0; i < arr.length; i++){
+            String word= arr[i];
+            String firstLetter = String.valueOf(word.charAt(0)).toUpperCase();
+            String finalWord ="";
+            for(int j = 1; j< word.length(); j++){
+                finalWord = finalWord + word.charAt(j);
+            }
+            finalWord = firstLetter+finalWord;
+            finalSentance = finalSentance + " " + finalWord;
+        }
+        System.out.println("firstLetterUppercase:: "+ finalSentance);
+
+    }
 
 
+    public void removeDuplicateFromString(){
+        String str = "sandeepa";
+        String result = "";
+        for(int i = 0; i < str.length(); i++){
+               char ch = str.charAt(i);
+               if(result.indexOf(ch) == -1){
+                   result += ch;
+               }
+        }
+        System.out.println(result  );
+    }
 
+//    count the characters in a string
 
+      public void countChar(){
+        String str= "abcdabcdab cdABCDABCD";
+
+          Map<Character, Integer> map = new HashMap<>();
+          for(char c : str.toCharArray()) {
+              map.put(c, map.getOrDefault(c, 0) + 1);
+          }
+          System.out.println(map);
+
+          for(Map.Entry<Character, Integer> entry: map.entrySet()){
+              System.out.println(entry.getKey() + " : " + entry.getValue());
+          }
+
+      }
+
+      public void removeDuplicateFromArrAndSort(){
+          int arr[] = {10,10,10,101,20,20,20,50,50,40,40};
+          int arr1[] = Arrays.stream(arr).distinct().sorted().toArray();
+              System.out.println(Arrays.toString(arr1));
+
+      }
 }

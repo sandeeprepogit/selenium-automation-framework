@@ -35,11 +35,14 @@ public class Main {
 //        System.out.print("Sum: ");
 //        result.show(); // Output: 12 + i5
 
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.fetchAccountDetails("10001");
-        System.out.println(bankAccount.getAccountNumber());
-        System.out.println(bankAccount.getBalance());
-        System.out.println(bankAccount.isActive());
+//        BankAccount bankAccount = new BankAccount();
+//        bankAccount.fetchAccountDetails("10001");
+//        System.out.println(bankAccount.getAccountNumber());
+//        System.out.println(bankAccount.getBalance());
+//        System.out.println(bankAccount.isActive());
+//        bankAccount.deposit(1000);
+
+        easy.countChar();
 
 
 
