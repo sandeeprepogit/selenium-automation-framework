@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Multicare Pharmacy - Comprehensive Healthcare Provider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF8C42;
+            --primary-teal: #1A7B8E;
+            --deep-purple: #4A2B5C;
+            --light-cream: #FFF8F3;
+            --soft-gray: #F5F7FA;
+            --text-dark: #2C3E50;
+            --text-light: #6C757D;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background: var(--light-cream);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            box-shadow: var(--shadow-sm);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), #FFB570);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo h2 {
+            font-size: 1.5rem;
+            color: var(--deep-purple);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1A7B8E 0%, #2A9BB0 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 3rem 5%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-orange);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 140, 66, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #FF7A2E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 140, 66, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-teal);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: var(--light-cream);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--primary-orange);
+            transition: height 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), #FFB570);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .about-images img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .about-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-images img:first-child {
+            grid-row: 1 / 3;
+            height: 100%;
+        }
+
+        .about-text {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: var(--deep-purple);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--soft-gray);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: var(--light-cream);
+            transform: translateX(8px);
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-orange);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--deep-purple) 0%, #5E3A73 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 50%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.15) 0%, transparent 70%);
+        }
+
+        .contact-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .contact-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-orange);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #FFB570;
+        }
+
+        /* Hours Section */
+        .hours {
+            background: white;
+            padding: 4rem 5%;
+        }
+
+        .hours-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hours-content h2 {
+            font-size: 2.5rem;
+            color: var(--deep-purple);
+            margin-bottom: 2rem;
+        }
+
+        .hours-display {
+            background: linear-gradient(135deg, var(--primary-teal), #2A9BB0);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hours-display h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .time-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+        }
+
+        .days-display {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .about-images {
+                order: 2;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 2rem 5%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .features-grid,
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images img:first-child {
+                grid-row: auto;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <div class="logo-icon">A</div>
+            <h2>Astra Healthcare</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Astra Multicare Pharmacy</h1>
+            <p class="tagline">More than Healthcare, we're Partners</p>
+            <p>Your trusted partner in comprehensive healthcare services. We provide seamless, patient-centered, and high-quality preventive healthcare that is affordable and accessible to all.</p>
+            <div class="cta-buttons">
+                <button onclick="openBookingModal()" class="btn btn-primary">Book Appointment</button>
+                <a href="tel:09000185340" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="/mnt/user-data/uploads/1779039128991_image.png" alt="Astra Healthcare Reception">
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="services">
+    <div class="section-header">
+        <h2>Our Healthcare Services</h2>
+        <p>Comprehensive care designed around your health and wellness needs</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">💊</div>
+            <h3>Pharmacy Services</h3>
+            <p>Complete range of prescription and over-the-counter medications with expert pharmaceutical guidance.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3>Diagnostic Labs</h3>
+            <p>Full-time medical lab consultants ensuring quick turnaround and accuracy of all diagnostic reports.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">👨‍⚕️</div>
+            <h3>Multi-Specialty Care</h3>
+            <p>Eminent and experienced consultants across all specialties providing comprehensive healthcare solutions.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏥</div>
+            <h3>Primary Healthcare</h3>
+            <p>Community-focused primary care services promoting healthy lifestyles and preventive medicine.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3>Health Education</h3>
+            <p>Empowering families with knowledge of common health issues, care options, and treatment plans.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <h3>Extended Hours</h3>
+            <p>Open 7 days a week from 8:00 AM to 10:00 PM for your convenience and peace of mind.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-content">
+        <div class="about-images">
+            <img src="/mnt/user-data/uploads/1779039150873_image.png" alt="Astra Healthcare Reception Desk">
+            <img src="/mnt/user-data/uploads/1779039136200_image.png" alt="Medical Laboratory">
+        </div>
+        <div class="about-text">
+            <h2>About Astra Healthcare</h2>
+            <p>Astra Healthcare started with a vision to provide seamless, patient-centered and high-quality preventive healthcare that is affordable and accessible to all.</p>
+            <p>We are a comprehensive healthcare provider focused on primary and multi-specialty healthcare services to the community. We play an integral role in promoting a healthy lifestyle within the community and empowering families with the knowledge of common health issues, care and treatment options.</p>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-icon">✓</div>
+                    <span><strong>Expert Consultants</strong> - Eminent specialists across all healthcare disciplines</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">✓</div>
+                    <span><strong>Quality Assurance</strong> - Full-time lab consultants for accurate diagnostics</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">✓</div>
+                    <span><strong>Patient-Centered</strong> - Affordable and accessible care for everyone</span>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">✓</div>
+                    <span><strong>Community Focus</strong> - Promoting wellness and healthy lifestyles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hours Section -->
+<section class="hours">
+    <div class="hours-content">
+        <h2>Visit Us Anytime</h2>
+        <div class="hours-display">
+            <h3>Open Every Day</h3>
+            <div class="time-display">08:00 AM - 10:00 PM</div>
+            <div class="days-display">Monday through Sunday</div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="contact-content">
+        <div class="contact-header">
+            <h2>Get In Touch</h2>
+            <p>We're here to serve you with the best healthcare services</p>
+        </div>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-card-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>Ground Floor, H No 4-3/204, Friends Colony, Jai Hind Nagar Colony, Puppalguda, Hyderabad, Manikonda, Telangana 500089</p>
+                <a href="https://maps.google.com/maps?vet=10CAAQoqAOahgKEwiQg6f06MCUAxUAAAAAHQAAAAAQnwE..i&sca_esv=ff58167e607b25dd&pvq=OhYweDA6MHg3MDVmN2JiNTY5YTkxZDY3&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bcb978e1bc8242d:0x705f7bb569a91d67" target="_blank">Get Directions →</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">📞</div>
+                <h3>Call Us</h3>
+                <p>Have questions? Need to schedule an appointment? Our team is ready to assist you.</p>
+                <a href="tel:09000185340">090001 85340</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">⏰</div>
+                <h3>Working Hours</h3>
+                <p>We're open every day of the week to ensure you always have access to quality healthcare.</p>
+                <p style="color: var(--primary-orange); font-weight: 600;">8:00 AM - 10:00 PM Daily</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 Astra Multicare Pharmacy. All rights reserved. | Committed to Your Health and Wellness</p>
+</footer>
+
+<!-- Receptionist Access Button -->
+<button onclick="toggleReceptionistView()" class="receptionist-toggle" title="Receptionist Dashboard">
+    👨‍💼
+</button>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Book Your Appointment</h2>
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <div class="form-group">
+                    <label for="patientName">Full Name *</label>
+                    <input type="text" id="patientName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="patientPhone">Phone Number *</label>
+                    <input type="tel" id="patientPhone" required placeholder="Enter your phone number" pattern="[0-9]{10}">
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Select Date *</label>
+                    <input type="date" id="appointmentDate" required onchange="loadTimeSlots()">
+                </div>
+                <div class="form-group">
+                    <label for="appointmentTime">Select Time *</label>
+                    <select id="appointmentTime" required>
+                        <option value="">First select a date</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentReason">Reason for Visit</label>
+                    <textarea id="appointmentReason" rows="3" placeholder="Brief description of your health concern"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeBookingModal()" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-submit">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Receptionist Dashboard -->
+<div id="receptionistDashboard" class="receptionist-dashboard">
+    <div class="dashboard-header">
+        <h2>📋 Receptionist Dashboard</h2>
+        <button onclick="toggleReceptionistView()" class="close-dashboard">✕</button>
+    </div>
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-number" id="todayCount">0</div>
+            <div class="stat-label">Today's Appointments</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="totalCount">0</div>
+            <div class="stat-label">Total Bookings</div>
+        </div>
+    </div>
+    <div class="dashboard-filters">
+        <input type="date" id="filterDate" onchange="filterAppointments()" placeholder="Filter by date">
+        <button onclick="clearFilters()" class="btn-filter">Show All</button>
+    </div>
+    <div class="appointments-list" id="appointmentsList">
+        <p class="no-appointments">No appointments yet</p>
+    </div>
+</div>
+
+<!-- Success Notification -->
+<div id="successNotification" class="notification">
+    <span class="notification-icon">✓</span>
+    <span class="notification-text">Appointment booked successfully!</span>
+</div>
+
+<!-- New Booking Alert for Receptionist -->
+<div id="newBookingAlert" class="booking-alert">
+    <span class="alert-icon">🔔</span>
+    <span class="alert-text">New appointment booked!</span>
+</div>
+
+<script>
+    // Initialize appointment system
+    let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+
+    // Set minimum date to today
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('appointmentDate');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+
+        // Load receptionist dashboard
+        updateReceptionistDashboard();
+
+        // Listen for storage changes (for real-time updates)
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'appointments') {
+                appointments = JSON.parse(e.newValue || '[]');
+                updateReceptionistDashboard();
+                showNewBookingAlert();
+            }
+        });
+    });
+
+    // Generate time slots
+    function generateTimeSlots() {
+        const slots = [];
+        const startHour = 8; // 8 AM
+        const endHour = 22; // 10 PM
+
+        for (let hour = startHour; hour < endHour; hour++) {
+            for (let minute = 0; minute < 60; minute += 30) {
+                const time = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+                slots.push(time);
+            }
+        }
+        return slots;
+    }
+
+    // Load available time slots
+    function loadTimeSlots() {
+        const dateInput = document.getElementById('appointmentDate');
+        const timeSelect = document.getElementById('appointmentTime');
+        const selectedDate = dateInput.value;
+
+        if (!selectedDate) {
+            timeSelect.innerHTML = '<option value="">First select a date</option>';
+            return;
+        }
+
+        const allSlots = generateTimeSlots();
+        const bookedSlots = appointments
+            .filter(apt => apt.date === selectedDate)
+            .map(apt => apt.time);
+
+        timeSelect.innerHTML = '<option value="">Select a time slot</option>';
+
+        allSlots.forEach(slot => {
+            const option = document.createElement('option');
+            option.value = slot;
+
+            if (bookedSlots.includes(slot)) {
+                option.textContent = `${formatTime(slot)} - Booked`;
+                option.disabled = true;
+                option.style.color = '#999';
+            } else {
+                option.textContent = formatTime(slot);
+            }
+
+            timeSelect.appendChild(option);
+        });
+    }
+
+    // Format time to 12-hour format
+    function formatTime(time) {
+        const [hours, minutes] = time.split(':');
+        const hour = parseInt(hours);
+        const ampm = hour >= 12 ? 'PM' : 'AM';
+        const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
+        return `${displayHour}:${minutes} ${ampm}`;
+    }
+
+    // Open booking modal
+    function openBookingModal() {
+        document.getElementById('bookingModal').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close booking modal
+    function closeBookingModal() {
+        document.getElementById('bookingModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.getElementById('bookingForm').reset();
+        document.getElementById('appointmentTime').innerHTML = '<option value="">First select a date</option>';
+    }
+
+    // Submit booking
+    function submitBooking(event) {
+        event.preventDefault();
+
+        const booking = {
+            id: Date.now(),
+            name: document.getElementById('patientName').value,
+            phone: document.getElementById('patientPhone').value,
+            date: document.getElementById('appointmentDate').value,
+            time: document.getElementById('appointmentTime').value,
+            reason: document.getElementById('appointmentReason').value || 'General consultation',
+            status: 'confirmed',
+            bookedAt: new Date().toISOString()
+        };
+
+        // Add to appointments
+        appointments.push(booking);
+        localStorage.setItem('appointments', JSON.stringify(appointments));
+
+        // Close modal and show success
+        closeBookingModal();
+        showSuccessNotification();
+
+        // Update receptionist dashboard
+        updateReceptionistDashboard();
+    }
+
+    // Show success notification
+    function showSuccessNotification() {
+        const notification = document.getElementById('successNotification');
+        notification.classList.add('show');
+
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
+    }
+
+    // Show new booking alert for receptionist
+    function showNewBookingAlert() {
+        const alert = document.getElementById('newBookingAlert');
+        alert.classList.add('show');
+
+        setTimeout(() => {
+            alert.classList.remove('show');
+        }, 4000);
+    }
+
+    // Toggle receptionist view
+    function toggleReceptionistView() {
+        const dashboard = document.getElementById('receptionistDashboard');
+        dashboard.classList.toggle('active');
+    }
+
+    // Update receptionist dashboard
+    function updateReceptionistDashboard() {
+        const today = new Date().toISOString().split('T')[0];
+        const todayAppointments = appointments.filter(apt => apt.date === today);
+
+        document.getElementById('todayCount').textContent = todayAppointments.length;
+        document.getElementById('totalCount').textContent = appointments.length;
+
+        displayAppointments(appointments);
+    }
+
+    // Display appointments
+    function displayAppointments(appointmentsToShow) {
+        const list = document.getElementById('appointmentsList');
+
+        if (appointmentsToShow.length === 0) {
+            list.innerHTML = '<p class="no-appointments">No appointments to show</p>';
+            return;
+        }
+
+        // Sort by date and time
+        const sorted = [...appointmentsToShow].sort((a, b) => {
+            const dateCompare = new Date(a.date) - new Date(b.date);
+            if (dateCompare !== 0) return dateCompare;
+            return a.time.localeCompare(b.time);
+        });
+
+        list.innerHTML = sorted.map(apt => {
+            const aptDate = new Date(apt.date);
+            const formattedDate = aptDate.toLocaleDateString('en-IN', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            return `
+                    <div class="appointment-card">
+                        <div class="appointment-header">
+                            <div class="appointment-time">
+                                <span class="time-badge">${formatTime(apt.time)}</span>
+                                <span class="date-text">${formattedDate}</span>
+                            </div>
+                            <button onclick="cancelAppointment(${apt.id})" class="btn-cancel-apt" title="Cancel appointment">
+                                🗑️
+                            </button>
+                        </div>
+                        <div class="appointment-body">
+                            <div class="patient-info">
+                                <strong>👤 ${apt.name}</strong>
+                                <span>📞 ${apt.phone}</span>
+                            </div>
+                            <div class="appointment-reason">
+                                <strong>Reason:</strong> ${apt.reason}
+                            </div>
+                            <div class="appointment-status ${apt.status}">
+                                ${apt.status.charAt(0).toUpperCase() + apt.status.slice(1)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }).join('');
+    }
+
+    // Filter appointments
+    function filterAppointments() {
+        const filterDate = document.getElementById('filterDate').value;
+        if (filterDate) {
+            const filtered = appointments.filter(apt => apt.date === filterDate);
+            displayAppointments(filtered);
+        } else {
+            displayAppointments(appointments);
+        }
+    }
+
+    // Clear filters
+    function clearFilters() {
+        document.getElementById('filterDate').value = '';
+        displayAppointments(appointments);
+    }
+
+    // Cancel appointment
+    function cancelAppointment(id) {
+        if (confirm('Are you sure you want to cancel this appointment?')) {
+            appointments = appointments.filter(apt => apt.id !== id);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            updateReceptionistDashboard();
+        }
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('bookingModal');
+        if (event.target === modal) {
+            closeBookingModal();
+        }
+    }
+</script>
+
+<style>
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .modal-content {
+        background: white;
+        border-radius: 24px;
+        width: 90%;
+        max-width: 550px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.4s ease;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .modal-header {
+        padding: 2rem 2rem 1rem;
+        border-bottom: 2px solid var(--soft-gray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h2 {
+        color: var(--deep-purple);
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    .close {
+        font-size: 2rem;
+        color: var(--text-light);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .close:hover {
+        background: var(--soft-gray);
+        color: var(--primary-orange);
+        transform: rotate(90deg);
+    }
+
+    .modal-body {
+        padding: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 2px solid #E5E7EB;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: 'DM Sans', sans-serif;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-orange);
+        box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .btn-cancel {
+        flex: 1;
+        padding: 0.9rem;
+        background: var(--soft-gray);
+        color: var(--text-dark);
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-cancel:hover {
+        background: #E5E7EB;
+        transform: translateY(-2px);
+    }
+
+    .btn-submit {
+        flex: 2;
+        padding: 0.9rem;
+        background: linear-gradient(135deg, var(--primary-orange), #FFB570);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3);
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(255, 140, 66, 0.4);
+    }
+
+    /* Receptionist Toggle Button */
+    .receptionist-toggle {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--deep-purple), #5E3A73);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.8rem;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(74, 43, 92, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1500;
+    }
+
+    .receptionist-toggle:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 6px 24px rgba(74, 43, 92, 0.5);
+    }
+
+    /* Receptionist Dashboard */
+    .receptionist-dashboard {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 500px;
+        height: 100vh;
+        background: white;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+        z-index: 1999;
+        transition: right 0.4s ease;
+        overflow-y: auto;
+    }
+
+    .receptionist-dashboard.active {
+        right: 0;
+    }
+
+    .dashboard-header {
+        padding: 2rem;
+        background: linear-gradient(135deg, var(--deep-purple), #5E3A73);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .dashboard-header h2 {
+        margin: 0;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .close-dashboard {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close-dashboard:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+    }
+
+    .dashboard-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: var(--light-cream);
+    }
+
+    .stat-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-orange);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 500;
+    }
+
+    .dashboard-filters {
+        padding: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        border-bottom: 2px solid var(--soft-gray);
+    }
+
+    .dashboard-filters input {
+        flex: 1;
+        padding: 0.7rem;
+        border: 2px solid #E5E7EB;
+        border-radius: 10px;
+        font-size: 0.95rem;
+    }
+
+    .btn-filter {
+        padding: 0.7rem 1.5rem;
+        background: var(--primary-teal);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-filter:hover {
+        background: #156779;
+        transform: translateY(-2px);
+    }
+
+    .appointments-list {
+        padding: 1.5rem;
+    }
+
+    .no-appointments {
+        text-align: center;
+        color: var(--text-light);
+        padding: 3rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .appointment-card {
+        background: white;
+        border: 2px solid var(--soft-gray);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+        animation: slideInRight 0.4s ease;
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .appointment-card:hover {
+        border-color: var(--primary-orange);
+        box-shadow: var(--shadow-md);
+        transform: translateX(-5px);
+    }
+
+    .appointment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .appointment-time {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .time-badge {
+        background: linear-gradient(135deg, var(--primary-orange), #FFB570);
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        display: inline-block;
+    }
+
+    .date-text {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-left: 0.2rem;
+    }
+
+    .btn-cancel-apt {
+        background: rgba(255, 0, 0, 0.1);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+
+    .btn-cancel-apt:hover {
+        background: rgba(255, 0, 0, 0.2);
+        transform: scale(1.1);
+    }
+
+    .appointment-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .patient-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        padding: 0.8rem;
+        background: var(--soft-gray);
+        border-radius: 10px;
+    }
+
+    .patient-info strong {
+        color: var(--deep-purple);
+        font-size: 1.05rem;
+    }
+
+    .patient-info span {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    .appointment-reason {
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        padding: 0.5rem 0;
+    }
+
+    .appointment-reason strong {
+        color: var(--text-light);
+        font-weight: 600;
+        margin-right: 0.5rem;
+    }
+
+    .appointment-status {
+        align-self: flex-start;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .appointment-status.confirmed {
+        background: rgba(34, 197, 94, 0.15);
+        color: #15803d;
+    }
+
+    /* Notifications */
+    .notification {
+        position: fixed;
+        top: 100px;
+        right: -400px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        color: white;
+        padding: 1.2rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3000;
+        transition: right 0.4s ease;
+        font-weight: 600;
+        font-size: 1.05rem;
+    }
+
+    .notification.show {
+        right: 2rem;
+    }
+
+    .notification-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .booking-alert {
+        position: fixed;
+        top: 100px;
+        right: -400px;
+        background: linear-gradient(135deg, var(--primary-orange), #FFB570);
+        color: white;
+        padding: 1.2rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(255, 140, 66, 0.4);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        z-index: 3000;
+        transition: right 0.4s ease;
+        font-weight: 600;
+        font-size: 1.05rem;
+        animation: pulse 1.5s infinite;
+    }
+
+    .booking-alert.show {
+        right: 2rem;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .alert-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        animation: ring 2s infinite;
+    }
+
+    @keyframes ring {
+        0%, 100% { transform: rotate(0deg); }
+        10%, 30% { transform: rotate(-15deg); }
+        20%, 40% { transform: rotate(15deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .receptionist-dashboard {
+            max-width: 100%;
+        }
+
+        .modal-content {
+            width: 95%;
+            max-height: 85vh;
+        }
+
+        .receptionist-toggle {
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 55px;
+            height: 55px;
+        }
+
+        .notification,
+        .booking-alert {
+            right: -350px;
+            max-width: calc(100% - 3rem);
+        }
+
+        .notification.show,
+        .booking-alert.show {
+            right: 1.5rem;
+        }
+    }
+</style>
+</body>
+</html>

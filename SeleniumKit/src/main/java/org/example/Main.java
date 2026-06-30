@@ -1,17 +1,17 @@
 package org.example;
 
 import DBUtils.SQLconnection;
-import javaDSA.logicBuildingProblems.BankAccount;
-import javaDSA.logicBuildingProblems.BasicProblems;
-import javaDSA.logicBuildingProblems.EasyProblems;
+import javaDSA.logicBuildingProblems.*;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         EasyProblems easy = new EasyProblems();
         BasicProblems BP = new BasicProblems();
+        ArrayHelper arrHelp = new ArrayHelper();
 //        BP.che ckEvenOrOdd(15);
 //        BP.multiplicationTable(20);
 //        System.out.println(BP.sumOfNatural2(20));
@@ -42,8 +42,20 @@ public class Main {
 //        System.out.println(bankAccount.isActive());
 //        bankAccount.deposit(1000);
 
-        easy.countChar();
+//        easy.countChar();
+//        arrHelp.sortIntAndStringDesc();
 
+
+        Student[] students = {
+                new Student(112, "Ram", "MP"),
+                new Student(343, "Shyam", "UP"),
+                new Student(254, "Hari", "Delhi")
+        };
+        Arrays.sort(students, new Student.SortByRoll());
+
+        for (Student s: students){
+            System.out.println(s);
+        }
 
 
 
