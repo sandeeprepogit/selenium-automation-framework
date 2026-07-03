@@ -1,6 +1,8 @@
 package javaDSA.logicBuildingProblems;
 
 
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.*;
 
 public class ArrayHelper {
@@ -244,29 +246,8 @@ public class ArrayHelper {
         if(str1.length() != str2.length()){
             System.out.println(str1+ " and " + str2 + " are not anagram");
         }else{
-           char[] ch1 = str1.toCharArray();
-           for(int i = 0; i < ch1.length- 1; i++){
-               for(int j = 0; j < ch1.length - 1 -i;j++) {
-                   if (ch1[j] > ch1[j + 1]) {
-                       char temp = ch1[j];
-                       ch1[j] = ch1[j + 1];
-                       ch1[j + 1] = temp;
-                   }
-               }
-           }
-
-            char[] ch2 = str2.toCharArray();
-            for(int i = 0; i < ch2.length - 1; i++){
-                for(int j = 0; j < ch2.length - 1-i;j++) {
-                    if (ch2[j] > ch2[j + 1]) {
-                        char temp = ch2[j];
-                        ch2[j] = ch2[j + 1];
-                        ch2[j + 1] = temp;
-                    }
-                }
-            }
-            sorted1 = new String(ch1);
-            sorted2 = new String(ch2);
+            sorted1 = sortAnString(str1);
+            sorted2 = sortAnString(str2);
         }
         if(sorted1.equals(sorted2)){
             System.out.println(str1+ " and " + str2 + " are anagram");
@@ -275,14 +256,186 @@ public class ArrayHelper {
 
     }
 
-    public static void main(String[] args) {
-//       bubbleSort();
-//       selectionSort();
-//        getCountDuplicateEle();
-        isAnagram("","");
-//        System.out.println(majorityElements());
+
+    public static String sortAnString(String str){
+//        String str ="sandeep";
+        char[] ch = str.toCharArray();
+        for(int i =0; i <ch.length; i++){
+            for (int j =0;j<ch.length-1-i;j++){
+                if (ch[j] > ch[j+1]) {
+                    char temp = ch[j];
+                    ch[j]= ch[j+1];
+                    ch[j+1] = temp;
+                }
+            }
+        }
+        System.out.println(String.valueOf(ch));
+        return String.valueOf(ch);
+
 
     }
 
+    public static void majorityElementFind(){
+//        Given an array nums of size n, return the majority element.
+//        The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+        int [] arr = {2,2,1,1,1,2,2};
+        int n= arr.length;
+
+        // sort all the element
+        for(int i=0; i<n-1;i++){
+            for(int j =0; j<n-1-i;j++){
+                if(arr[j] > arr[j+1]){
+                    //swap the array value
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+        //iterate and count the occorance of the element
+
+        for (int i =0; i<n-1;i++){
+            int count = 0;
+           for(int j =0; j<n-1;j++){
+               if(arr[i]==arr[j+1]){
+                   count++;
+               }
+           }
+            if(count>n/2){
+                System.out.println(arr[i]+ " is mjr ele");
+            }
+        }
+
+    }
+
+    public static void mergeSortedArray(){
+        int[] nums1 = {1,2,3};
+        int[] nums2 = {2,5,6};
+        int[] finalArray = new int[nums1.length+nums2.length];
+        for (int i=0; i<nums1.length;i++){
+            finalArray[i] = nums1[i];
+        }
+        for (int i=0; i<nums2.length;i++){
+            finalArray[nums1.length + i] = nums2[i];
+        }
+        System.out.println(Arrays.toString(finalArray));
+        for(int i = 0; i< finalArray.length-1;i++){
+            for (int j = 0; j < finalArray.length-1-i;j++){
+                if(finalArray[j]>finalArray[j+1]){
+                    int temp = finalArray[j];
+                    finalArray[j] = finalArray[j+1];
+                    finalArray[j+1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(finalArray));
+
+    }
+
+    public static void findUniqueNumber(){
+        int[] arr = {1,5,4,4,1,2,1,2};
+        for (int i = 0; i < arr.length;i++){
+            int count = 0;
+            for (int j =0;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                }
+            }
+            if (count == 1) {
+                System.out.println(arr[i]);
+            }
+        }
+    }
+
+    // Find occorance of each character
+    public static void occurrenceOfChar(){
+        String str = "iiidmsjsjsmdndxuenmsdiksn";
+        char[] ch= str.toCharArray();
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(int i = 0;i<ch.length;i++){
+             if(map.containsKey(ch[i])){
+                 map.put(ch[i],map.get(ch[i])+1);
+             }else {
+                 map.put(ch[i],1);
+             }
+        }
+        System.out.println(map);
+    }
+
+    public static void sortColors(){
+        int[] arr = {2,0,2,1,1,0};
+        for(int i = 0;i<arr.length-1;i++){
+            for(int j =0; j<arr.length-1-i;j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void findDuplicate(){
+        int[] arr = {1,3,4,2,2,4,4};
+        HashSet<Integer> set= new HashSet<>();
+        for (int i = 0;i<arr.length;i++){
+            if(!set.contains(arr[i])){
+                set.add(arr[i]);
+            }else{
+                System.out.println(arr[i] + " is duplicate number");
+            }
+        }
+    }
+
+    public static boolean isPalindrome(){
+        boolean flag= false;
+        String s = "A man, a plan, a canal: Panama";
+        s= s.replaceAll("[^a-zA-Z0-9 ]", "").replace(" ","").toLowerCase();
+        System.out.println(s);
+        char[] ch = s.toCharArray();
+        String temp = "";
+        for (int i=ch.length-1;i>=0;i--){
+            temp =temp+ch[i];
+        }
+        System.out.println(temp);
+        if (s.equals(temp)){
+            flag =true;
+        }
+        System.out.println(flag);
+        return flag;
+    }
+
+    public static boolean isAnagramString(String s, String t) {
+        boolean flag = false;
+        String str1 = new String(sortString(s));
+        String str2 = new String(sortString(t));
+
+
+        if(str1.equals(str2)){
+            flag = true;
+        }
+        return flag;
+    }
+
+    public static String sortString(String str){
+        char[] ch = str.toCharArray();
+        for(int i =0; i < ch.length-1;i++){
+            for(int j=0;j<ch.length-1-i;j++){
+                if(ch[j] > ch[j+1]){
+                    char temp = ch[j];
+                    ch[j] = ch[j+1];
+                    ch[j+1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(ch));
+        return Arrays.toString(ch);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isAnagramString("anagram","nagaram"));
+    }
 
 }
